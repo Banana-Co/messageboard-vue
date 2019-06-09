@@ -3,7 +3,7 @@
   <el-row>
 
     <el-col :span="4">
-        <img src="@/assets/logo.png" alt="">
+        <img src="@/assets/logo.png" alt="" @click="ToLogin">
     </el-col>
 
     <el-col :span="3" :offset="17">
@@ -57,6 +57,11 @@ export default {
 			this.$router.push(
 				'/index'
 			)
+		},
+		ToLogin() {
+			this.$router.replace( {
+				path: '/login'
+			})
 		},
 	}
 }
