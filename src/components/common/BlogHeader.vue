@@ -7,17 +7,13 @@
     </el-col>
 
     <el-col :span="3" :offset="17">
-      <el-dropdown>
-        <el-button type="plain">
+      
+        <el-button type="plain" @click="ToIndex">
           <i class="el-icon-user el-icon--right"></i>
           账户管理
           <i class="el-icon-arrow-down el-icon--right"></i>
         </el-button>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item v-on:click="ToIndex">查看个人信息</el-dropdown-item>
-          <el-dropdown-item>注销</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
+      
     </el-col>
 
   </el-row>

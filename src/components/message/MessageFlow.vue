@@ -3,10 +3,10 @@
 
     <div class="botton-area">
     <el-row> 
-      <el-col :span="2">
+      <el-col :span="5">
       <el-button type="plain" @click="dialogFormVisible = true"> 新建留言 </el-button>
       </el-col>
-      <el-col :span="2">
+      <el-col :span="5">
        <el-button type="plain" @click="getMessagePage"> 刷新 </el-button>
       </el-col>
     </el-row>
@@ -93,7 +93,7 @@
 		mounted(){
 		    /*页面挂载获取保存的cookie值，渲染到页面上*/
 		    let uname = getCookie('username')
-		    this.author = uname
+		    this.form.author = uname
 		    /*如果cookie不存在，则跳转到登录页*/
 		    if(uname == ""){
 		        this.$router.replace('/')

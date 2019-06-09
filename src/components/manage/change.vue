@@ -37,10 +37,6 @@
 			let uname = getCookie('username')
 			this.name = uname
 			this.loginInfoVo.username = this.name
-			/*如果cookie不存在，则跳转到登录页*/
-			if (uname == "") {
-				this.$router.replace('/')
-			}
 		},
 		methods: {
 			change() {

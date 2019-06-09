@@ -1,15 +1,16 @@
 <template>
     <div>
         <h3>欢迎 {{name}}</h3>
+		<br />
 		<p>注册时间:{{time}}</p>
 		<br />
-        <a href="#" @click="quit">注销登录</a>
-		<br />
-		<a href="#" v-on:click="ToChange">改变密码</a>
-		<br />
-		<a href="#" v-on:click="ToMessage">留言</a>
 		<div >
-			<span @click="$router.back(-1)">返回</span>
+			<span @click="quit">注销登录</span>
+			<span @click="ToChange">改变密码</span>
+		</div>
+		<br />
+		<div >
+			<el-button type="plain" @click="$router.back(-1)"> 返回 </el-button>
 		</div>
     </div>
 </template>
