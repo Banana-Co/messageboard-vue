@@ -6,18 +6,7 @@
         <img src="@/assets/logo.png" alt="">
     </el-col>
 
-    <el-col :span="11" :offset="5">
-      <el-input placeholder="搜索合同" v-model="input" class="input-with-select">
-        <el-select v-model="select" slot="prepend" placeholder="请选择">
-          <el-option label="按标题" value="1"></el-option>
-          <el-option label="按编号" value="2"></el-option>
-          <el-option label="按签署人" value="3"></el-option>
-        </el-select>
-        <el-button slot="append" icon="el-icon-search"></el-button>
-      </el-input>
-    </el-col>
-
-    <el-col :span="3" :offset="1">
+    <el-col :span="3" :offset="17">
       <el-dropdown>
         <el-button type="plain">
           <i class="el-icon-user el-icon--right"></i>
