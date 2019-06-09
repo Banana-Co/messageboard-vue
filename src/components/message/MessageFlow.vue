@@ -71,6 +71,7 @@
 
 
 <script>
+	import { setCookie,getCookie,delCookie } from '../../assets/js/cookie.js'
   export default {
     name: 'MessageFlow',
     data() {
@@ -89,6 +90,15 @@
         }
       }
     },
+		mounted(){
+		    /*页面挂载获取保存的cookie值，渲染到页面上*/
+		    let uname = getCookie('username')
+		    this.author = uname
+		    /*如果cookie不存在，则跳转到登录页*/
+		    if(uname == ""){
+		        this.$router.replace('/')
+		    }
+		},
     methods: {
       handleCurrentChange: function(currentPage) {
         this.pageNum = currentPage;

@@ -14,7 +14,7 @@
           <i class="el-icon-arrow-down el-icon--right"></i>
         </el-button>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>修改个人信息</el-dropdown-item>
+          <el-dropdown-item v-on:click="ToIndex">查看个人信息</el-dropdown-item>
           <el-dropdown-item>注销</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -55,6 +55,13 @@ export default {
       input: '',
       select: ''
     }
-  }
+  },
+	methods:{
+		ToIndex() {
+			this.$router.push(
+				'/index'
+			)
+		},
+	}
 }
 </script>
