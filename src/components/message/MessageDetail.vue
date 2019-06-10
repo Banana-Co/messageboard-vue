@@ -2,10 +2,14 @@
   <div class="message-detail">
 
   <el-row>
-    <el-col :span="2">
+    <el-col :span="6">
     <el-button type="plain" @click="handleClickReturn"> 返回 </el-button> 
     </el-col>
-  </el-row>
+		<el-col :span="6" >
+		<el-button type="plain" @click="like" > <img src="@/assets/dis/dislike.png" height="15px" v-show="show_dislike"> <img src="@/assets/like/like.png" height="15px" v-show="show_like"></el-button>
+		 
+		</el-col>
+	</el-row>
 
   <el-card class="box-card">
     <div slot="header" class="clearfix">
@@ -57,10 +61,22 @@
     data () {
       return {
         title: '',
-        content: ''
+        content: '',
+				show_like:false,
+				show_dislike:true,
       }
     },
     methods: {
+			
+			like() {
+				if(this.show_dislike==true){
+					this.show_dislike=false;
+					this.show_like=true;
+				}else{
+					this.show_dislike=true;
+					this.show_like=false;
+				}
+			},
       getMessageDetail() {
         this.$axios
           .get(`/getMessage/${this.$route.params.id}`)
