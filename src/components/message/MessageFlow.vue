@@ -30,6 +30,14 @@
         prop="title"
         label="标题">
       </el-table-column>
+	  <el-table-column
+	    prop="like_number"
+	    label="点赞量">
+	  </el-table-column>
+	  <el-table-column
+	    prop="like"
+	    label="点赞">
+	  </el-table-column>
     </el-table>
     
     <el-pagination
@@ -48,6 +56,12 @@
         <el-form-item label="留言内容" :label-width="formLabelWidth">
           <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 10}" placeholder="请输入留言内容" v-model="form.content"> </el-input>
         </el-form-item>
+		<el-form-item label="点赞数" :label-width="formLabelWidth">
+		  <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 10}" placeholder="请输入留言内容" v-model="form.content"> </el-input>
+		</el-form-item>
+		<el-form-item label="点赞" :label-width="formLabelWidth">
+		  <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 10}" placeholder="请输入留言内容" v-model="form.content"> </el-input>
+		</el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">关 闭</el-button>
