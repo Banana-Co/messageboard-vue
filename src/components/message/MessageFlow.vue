@@ -2,11 +2,12 @@
   <div class="message-flow">
 
     <div class="botton-area">
-    <el-row> 
-      <el-col :span="3">
+    <el-row :gutter="20"> 
+      <el-col :span="2">
       <el-button type="plain" @click="dialogFormVisible = true"> 新建留言 </el-button>
       </el-col>
-      <el-col :span="3" :offset="16">
+			<el-col :span="20"><div class="grid-content bg-white"></div></el-col>
+      <el-col :span="2">
        <el-button type="plain" @click="getMessagePage"> <img src="@/assets/xin.png" height="18px"/> </el-button>
       </el-col>
     </el-row>

@@ -1,4 +1,5 @@
 <template>
+	
 	<div class="wrap">
 		<p v-show="showTishi">{{tishi}}</p>
 		<h3>用户名: {{name}}</h3>

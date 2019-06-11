@@ -1,10 +1,11 @@
 <template>
   <div class="message-detail">
-  <el-row>
-    <el-col :span="3">
+  <el-row :gutter="20">
+    <el-col :span="2">
     <el-button type="plain" @click="handleClickReturn"> 返回 </el-button> 
     </el-col>
-		<el-col :span="3" :offset="16">
+		<el-col :span="20"><div class="grid-content bg-white"></div></el-col>
+		<el-col :span="2">
 		<el-button type="plain" @click="like" > 点赞<!-- <img src="@/assets/dis/dislike.png" height="15px" v-show="show_dislike"> --> <!-- <img src="@/assets/like/like.png" height="15px" > --></el-button>
 		 
 		</el-col>
@@ -24,6 +25,32 @@
 </template>
 
 <style>
+	.el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
   .message-detail {
     margin-left: 220px;
     margin-right: 220px

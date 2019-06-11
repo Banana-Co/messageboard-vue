@@ -1,18 +1,22 @@
 <template>
-    <div>
-        <h3>欢迎 {{name}}</h3>
-		<br />
-		<p>注册时间:{{time}}</p>
-		<br />
-		<div >
-			<span @click="quit">注销登录</span>
-			<span @click="ToChange">改变密码</span>
+	<center>
+	<el-card class="box-card">
+	  <div slot="header" class="clearfix">
+	    <center><span>你好!</span></center>
+	  </div>
+	  <div>
+		<span><br/>用户名:<br/>{{name}}</span><br/><br/>
+		<span>注册时间:<br/>{{time}}</span>
 		</div>
-		<br />
-		<div >
-			<el-button type="plain" @click="$router.back(-1)"> 返回 </el-button>
+		<br/><br/>
+		<div>
+		<button type="text" @click="ToChange">更改密码</button>
+		<button type="text" @click="ToChange">注销</button>
 		</div>
-    </div>
+		<center><el-button type="plain" @click="$router.back(-1)"> 返回 </el-button></center>
+		
+	</el-card>
+	</center>
 </template>
 
 <script>
@@ -59,3 +63,28 @@ import { setCookie,getCookie,delCookie } from '../../assets/js/cookie.js'
         }
     }
 </script>
+
+
+
+<style>
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    margin-bottom: 18px;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+    display: table;
+    content: "";
+  }
+  .clearfix:after {
+    clear: both
+  }
+
+  .box-card {
+    width: 480px;
+  }
+</style>
