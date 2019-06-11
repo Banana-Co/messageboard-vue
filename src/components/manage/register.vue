@@ -2,7 +2,7 @@
     <div class="wrap">
 			<p v-show="showTishi">{{tishi}}</p>
       <input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名" />
-      <input type="password"  v-model="loginInfoVo.password" placeholder="请输入密码" />
+      <input type="password"  v-model="loginInfoVo.password" placeholder="请输入6~20位密码" />
       <button v-on:click="register">注册</button>
 			<span v-on:click="ToLogin">已有账号？马上登录</span>
 			 <br/>
@@ -62,6 +62,9 @@ import {
   						this.tishi = "该用户已存在"
   						this.showTishi = true
   					} else if (successResponse.data.code === 400) {
+  						this.tishi = "输入不合法"
+  						this.showTishi = true
+  					}else if (successResponse.data.code === 402) {
   						this.tishi = "输入不合法"
   						this.showTishi = true
   					}

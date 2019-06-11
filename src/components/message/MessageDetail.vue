@@ -75,7 +75,7 @@
 				// show_like:false,
 				// show_dislike:true
       }
-    }
+    },
 		
     methods: {
 			
