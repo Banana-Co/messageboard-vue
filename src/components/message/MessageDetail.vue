@@ -1,12 +1,15 @@
 <template>
   <div class="message-detail">
-
+	<h3>欢迎 {{LikeInfoVo.user_name}}</h3>
+		<br />
+		<p>信息号:{{LikeInfoVo.message_id}}</p>
+		<br />
   <el-row>
     <el-col :span="6">
     <el-button type="plain" @click="handleClickReturn"> 返回 </el-button> 
     </el-col>
 		<el-col :span="6" >
-		<el-button type="plain" @click="like" > <img src="@/assets/dis/dislike.png" height="15px" v-show="show_dislike"> <img src="@/assets/like/like.png" height="15px" v-show="show_like"></el-button>
+		<el-button type="plain" @click="like" > 点赞<!-- <img src="@/assets/dis/dislike.png" height="15px" v-show="show_dislike"> --> <!-- <img src="@/assets/like/like.png" height="15px" > --></el-button>
 		 
 		</el-col>
 	</el-row>
@@ -67,43 +70,64 @@
       return {
         title: '',
         content: '',
-				show_like:false,
-				show_dislike:true
+				LikeInfoVo: {
+					user_name: getCookie('username'),
+					message_id: this.$route.params.id
+				},
+				// show_like:false,
+				// show_dislike:true
       }
     },
-		mounted(){
-		    /*页面挂载获取保存的cookie值，渲染到页面上*/
-		    if(getCookie('like/${this.$route.params.id}')){
-					this.show_like=true,
-					this.show_dislike=false
-				}else{
-					this.show_like=false,
-					this.show_dislike=true
-				}
-		},
+		// mounted(){
+		//     /*页面挂载获取保存的cookie值，渲染到页面上*/
+		//     if(getCookie('like/${this.$route.params.id}')){
+		// 			this.show_like=true,
+		// 			this.show_dislike=false
+		// 		}else{
+		// 			this.show_like=false,
+		// 			this.show_dislike=true
+		// 		}
+		// },
 		
     methods: {
 			
+			// like() {
+			// 	if(this.show_dislike==true){
+			// 		this.show_dislike=false;
+			// 		this.show_like=true;
+			// 		setCookie('like/${this.$route.params.id}', true, 1000 * 60);
+			// 		this.$axios
+			// 		  .post(`/addLike/${this.$route.params.id}`)
+			// 		  .catch(function (error) {
+			// 		    console.log(error);
+			// 		  })
+			// 	}else{
+			// 		this.show_dislike=true;
+			// 		this.show_like=false;
+			// 		delCookie('like/${this.$route.params.id}');
+			// 		this.$axios
+			// 		  .post(`/addDislike/${this.$route.params.id}`)
+			// 		  .catch(function (error) {
+			// 		    console.log(error);
+			// 		  })
+			// 	}
+			// },
 			like() {
-				if(this.show_dislike==true){
-					this.show_dislike=false;
-					this.show_like=true;
-					setCookie('like/${this.$route.params.id}', true, 1000 * 60);
 					this.$axios
-					  .post(`/addLike/${this.$route.params.id}`)
-					  .catch(function (error) {
-					    console.log(error);
+					  .post('/addLike', {
+					    user_name: this.LikeInfoVo.user_name,
+					    message_id: this.LikeInfoVo.message_id,
 					  })
-				}else{
-					this.show_dislike=true;
-					this.show_like=false;
-					delCookie('like/${this.$route.params.id}');
-					this.$axios
-					  .post(`/addDislike/${this.$route.params.id}`)
-					  .catch(function (error) {
-					    console.log(error);
-					  })
-				}
+						.then(successResponse => {
+							this.responseResult = JSON.stringify(successResponse.data)
+							if (successResponse.data.code === 200) {
+								alert("点赞成功")
+							} else if (successResponse.data.code === 400) {
+								alert("已点赞过该留言")
+							}
+						})
+						.catch(failResponse => {})
+				
 			},
       getMessageDetail() {
         this.$axios
@@ -125,4 +149,5 @@
       this.getMessageDetail()
     }
   }
+	
 </script>
