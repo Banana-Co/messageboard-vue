@@ -1,4 +1,4 @@
-# blockchain-vue
+# messageboard
 
 > A Vue.js project
 
