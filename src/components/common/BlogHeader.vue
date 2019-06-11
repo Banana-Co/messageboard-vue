@@ -3,7 +3,7 @@
   <el-row>
 
     <el-col :span="4">
-        <img src="@/assets/logo.png" alt="" @click="ToLogin">
+        <img src="@/assets/logo.png" alt="" @click="ToLogin" height="40px">
     </el-col>
 
     <el-col :span="3" :offset="17">
@@ -11,7 +11,7 @@
         <el-button type="plain" @click="ToIndex">
           <i class="el-icon-user el-icon--right"></i>
           账户管理
-          <i class="el-icon-arrow-down el-icon--right"></i>
+          <!-- <i class="el-icon-arrow-down el-icon--right"></i> -->
         </el-button>
       
     </el-col>

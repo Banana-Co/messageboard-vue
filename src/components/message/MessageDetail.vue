@@ -56,6 +56,11 @@
 </style>
 
 <script>
+	import {
+		setCookie,
+		getCookie,
+		delCookie
+	} from '../../assets/js/cookie.js'
   export default {
     name: "MessageDetail",
     data () {
@@ -63,15 +68,27 @@
         title: '',
         content: '',
 				show_like:false,
-				show_dislike:true,
+				show_dislike:true
       }
     },
+		mounted(){
+		    /*页面挂载获取保存的cookie值，渲染到页面上*/
+		    if(getCookie('like/${this.$route.params.id}')){
+					this.show_like=true,
+					this.show_dislike=false
+				}else{
+					this.show_like=false,
+					this.show_dislike=true
+				}
+		},
+		
     methods: {
 			
 			like() {
 				if(this.show_dislike==true){
 					this.show_dislike=false;
 					this.show_like=true;
+					setCookie('like/${this.$route.params.id}', true, 1000 * 60);
 					this.$axios
 					  .post(`/addLike/${this.$route.params.id}`)
 					  .catch(function (error) {
@@ -80,6 +97,7 @@
 				}else{
 					this.show_dislike=true;
 					this.show_like=false;
+					delCookie('like/${this.$route.params.id}');
 					this.$axios
 					  .post(`/addDislike/${this.$route.params.id}`)
 					  .catch(function (error) {
