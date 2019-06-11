@@ -72,9 +72,19 @@
 				if(this.show_dislike==true){
 					this.show_dislike=false;
 					this.show_like=true;
+					this.$axios
+					  .post(`/addLike/${this.$route.params.id}`)
+					  .catch(function (error) {
+					    console.log(error);
+					  })
 				}else{
 					this.show_dislike=true;
 					this.show_like=false;
+					this.$axios
+					  .post(`/addDislike/${this.$route.params.id}`)
+					  .catch(function (error) {
+					    console.log(error);
+					  })
 				}
 			},
       getMessageDetail() {
