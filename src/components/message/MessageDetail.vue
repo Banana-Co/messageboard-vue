@@ -17,9 +17,7 @@
   <el-card class="box-card">
     <div slot="header" class="clearfix">
       <span> {{title}} </span>
-      <!--
-      <el-卡片名称button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
-      -->
+      
     </div>
     <div class="text item">
       {{ content }}
@@ -77,41 +75,10 @@
 				// show_like:false,
 				// show_dislike:true
       }
-    },
-		// mounted(){
-		//     /*页面挂载获取保存的cookie值，渲染到页面上*/
-		//     if(getCookie('like/${this.$route.params.id}')){
-		// 			this.show_like=true,
-		// 			this.show_dislike=false
-		// 		}else{
-		// 			this.show_like=false,
-		// 			this.show_dislike=true
-		// 		}
-		// },
+    }
 		
     methods: {
 			
-			// like() {
-			// 	if(this.show_dislike==true){
-			// 		this.show_dislike=false;
-			// 		this.show_like=true;
-			// 		setCookie('like/${this.$route.params.id}', true, 1000 * 60);
-			// 		this.$axios
-			// 		  .post(`/addLike/${this.$route.params.id}`)
-			// 		  .catch(function (error) {
-			// 		    console.log(error);
-			// 		  })
-			// 	}else{
-			// 		this.show_dislike=true;
-			// 		this.show_like=false;
-			// 		delCookie('like/${this.$route.params.id}');
-			// 		this.$axios
-			// 		  .post(`/addDislike/${this.$route.params.id}`)
-			// 		  .catch(function (error) {
-			// 		    console.log(error);
-			// 		  })
-			// 	}
-			// },
 			like() {
 					this.$axios
 					  .post('/addLike', {
