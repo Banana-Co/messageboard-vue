@@ -1,10 +1,10 @@
 <template>
   <div class="message-detail">
   <el-row>
-    <el-col :span="6">
+    <el-col :span="3">
     <el-button type="plain" @click="handleClickReturn"> 返回 </el-button> 
     </el-col>
-		<el-col :span="6" >
+		<el-col :span="3" :offset="16">
 		<el-button type="plain" @click="like" > 点赞<!-- <img src="@/assets/dis/dislike.png" height="15px" v-show="show_dislike"> --> <!-- <img src="@/assets/like/like.png" height="15px" > --></el-button>
 		 
 		</el-col>
