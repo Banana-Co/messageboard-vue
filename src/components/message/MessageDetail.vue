@@ -1,9 +1,5 @@
 <template>
   <div class="message-detail">
-	<h3>欢迎 {{LikeInfoVo.user_name}}</h3>
-		<br />
-		<p>信息号:{{LikeInfoVo.message_id}}</p>
-		<br />
   <el-row>
     <el-col :span="6">
     <el-button type="plain" @click="handleClickReturn"> 返回 </el-button> 
