@@ -8,12 +8,14 @@
 		<span><br/>用户名:<br/>{{name}}</span><br/><br/>
 		<span>注册时间:<br/>{{time}}</span>
 		</div>
-		<br/><br/>
+		<br/><br/><br/>
 		<div>
-		<button type="text" @click="ToChange">更改密码</button>
-		<button type="text" @click="ToChange">注销</button>
+		<center><button type="text" @click="ToChange">更改密码</button></center>
+		<center><button type="text" @click="quit">注销</button></center>
 		</div>
-		<center><el-button type="plain" @click="$router.back(-1)"> 返回 </el-button></center>
+		<div >
+			<span @click="$router.back(-1)">返回</span>
+		</div>
 		
 	</el-card>
 	</center>
@@ -85,6 +87,47 @@ import { setCookie,getCookie,delCookie } from '../../assets/js/cookie.js'
   }
 
   .box-card {
-    width: 480px;
+    width: 360px;
+  }
+  .wrap {
+  	text-align: center;
+  }
+  
+  input {
+  	display: block;
+  	width: 250px;
+  	height: 40px;
+  	line-height: 40px;
+  	margin: 0 auto;
+  	margin-bottom: 10px;
+  	outline: none;
+  	border: 1px solid #888;
+  	padding: 10px;
+  	box-sizing: border-box;
+  }
+  
+  p {
+  	color: red;
+  }
+  
+  button {
+  	display: block;
+  	width: 250px;
+  	height: 40px;
+  	line-height: 40px;
+  	margin: 0 auto;
+  	border: none;
+  	background-color: #41b883;
+  	color: #fff;
+  	font-size: 16px;
+  	margin-bottom: 5px;
+  }
+  
+  span {
+  	cursor: pointer;
+  }
+  
+  span:hover {
+  	color: #41b883;
   }
 </style>
