@@ -11,11 +11,8 @@
 		<div class="grid-content"><br/><br/><br/><br/><br/><br/><br/></div>
 		<center><el-card class="login-card">
 			<p v-show="showTishi">{{tishi}}</p>
-			<div class="grid-content"></div>
 			<el-input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名"></el-input>
-			<div class="grid-content"></div>
 			<el-input type="password" v-model="loginInfoVo.password" placeholder="请输入6~20位密码"></el-input>
-			<div class="grid-content"></div>
 			<br/><el-button type="primary" v-on:click="login">注册</el-button><br/>
 			<div >
 				<span v-on:click="ToLogin">已有账号？马上登录</span><br/>
