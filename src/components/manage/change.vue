@@ -1,15 +1,18 @@
 <template>
 	
 	<div class="wrap">
-		<p v-show="showTishi">{{tishi}}</p>
-		<h3>用户名: {{name}}</h3>
-		<input type="password" v-model="loginInfoVo.password0" placeholder="请输入旧密码" />
-		<input type="password" v-model="loginInfoVo.password1" placeholder="请输入新密码" />
-		<input type="password" v-model="loginInfoVo.password2" placeholder="请确定新密码" />
-		<button v-on:click="change">修改密码</button>
-		<div >
-			<span @click="$router.back(-1)">返回</span>
-		</div>
+		<center><el-card class="box-card">
+			<p v-show="showTishi">{{tishi}}</p>
+			<h3>用户名: {{name}}</h3>
+			<el-input type="password" v-model="loginInfoVo.password0" placeholder="请输入旧密码"></el-input>
+			<el-input type="password" v-model="loginInfoVo.password1" placeholder="请输入新密码"></el-input>
+			<el-input type="password" v-model="loginInfoVo.password2" placeholder="请确认新密码"></el-input>
+			<el-button plain @click="change">修改密码</el-button>
+			<div >
+				<br/><span @click="$router.back(-1)">返回</span>
+			</div>
+			
+		</el-card></center>
 	</div>
 </template>
 
@@ -73,35 +76,12 @@
 		text-align: center;
 	}
 
-	input {
-		display: block;
-		width: 250px;
-		height: 40px;
-		line-height: 40px;
-		margin: 0 auto;
-		margin-bottom: 10px;
-		outline: none;
-		border: 1px solid #888;
-		padding: 10px;
-		box-sizing: border-box;
-	}
 
 	p {
 		color: red;
 	}
+	
 
-	button {
-		display: block;
-		width: 250px;
-		height: 40px;
-		line-height: 40px;
-		margin: 0 auto;
-		border: none;
-		background-color: #41b883;
-		color: #fff;
-		font-size: 16px;
-		margin-bottom: 5px;
-	}
 
 	span {
 		cursor: pointer;

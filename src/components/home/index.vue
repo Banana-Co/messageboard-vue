@@ -10,11 +10,11 @@
 		</div>
 		<br/><br/><br/>
 		<div>
-		<center><button type="text" @click="ToChange">更改密码</button></center>
-		<center><button type="text" @click="quit">注销</button></center>
+		<el-button plain @click="ToChange">更改密码</el-button>
+		<el-button plain @click="quit">注销</el-button>
 		</div>
 		<div >
-			<span @click="$router.back(-1)">返回</span>
+			<center><el-button type=text @click="$router.back(-1)">返回</el-button></center>
 		</div>
 		
 	</el-card>
@@ -110,18 +110,6 @@ import { setCookie,getCookie,delCookie } from '../../assets/js/cookie.js'
   	color: red;
   }
   
-  button {
-  	display: block;
-  	width: 250px;
-  	height: 40px;
-  	line-height: 40px;
-  	margin: 0 auto;
-  	border: none;
-  	background-color: #41b883;
-  	color: #fff;
-  	font-size: 16px;
-  	margin-bottom: 5px;
-  }
   
   span {
   	cursor: pointer;

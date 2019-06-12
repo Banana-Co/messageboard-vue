@@ -1,12 +1,26 @@
 <template>
 	<div class="wrap">
-		<p v-show="showTishi">{{tishi}}</p>
+		<!-- <p v-show="showTishi">{{tishi}}</p>
 		<input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名" />
 		<input type="password"  v-model="loginInfoVo.password" placeholder="请输入密码" />
-		<button v-on:click="login">登录</button>
+		<el-button type="primary" v-on:click="login">登录</el-button><br/>
 		<span v-on:click="ToRegister">没有账号？马上注册</span>
 		<br />
-		<span v-on:click="ToMain">查看用户</span>
+		<span v-on:click="ToMain">查看用户</span> -->
+		<div class="grid-content"><br/><br/><br/><br/><br/><br/><br/></div>
+		<center><el-card class="login-card">
+			<p v-show="showTishi">{{tishi}}</p>
+			<div class="grid-content"></div>
+			<el-input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名"></el-input>
+			<div class="grid-content"></div>
+			<el-input type="password" v-model="loginInfoVo.password" placeholder="请输入新密码"></el-input>
+			<div class="grid-content"></div>
+			<br/><el-button type="primary" v-on:click="login">登录</el-button><br/>
+			<div >
+				<span v-on:click="ToRegister">没有账号？马上注册</span><br/>
+				<span @click="$router.back(-1)">返回</span>
+			</div>
+		</el-card></center>
 	</div>
 </template>
 
@@ -78,6 +92,15 @@
 		text-align: center;
 	}
 
+	.login-card{
+		width: 320px;
+	}
+
+	.wrap.p {
+		color: red;
+	}
+
+
 	input {
 		display: block;
 		width: 250px;
@@ -89,25 +112,8 @@
 		border: 1px solid #888;
 		padding: 10px;
 		box-sizing: border-box;
-	}
-
-	.wrap.p {
-		color: red;
-	}
-
-	button {
-		display: block;
-		width: 250px;
-		height: 40px;
-		line-height: 40px;
-		margin: 0 auto;
-		border: none;
-		background-color: #41b883;
-		color: #fff;
-		font-size: 16px;
-		margin-bottom: 5px;
-	}
-
+		}
+	
 	span {
 		cursor: pointer;
 	}

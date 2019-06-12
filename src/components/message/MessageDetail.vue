@@ -1,25 +1,26 @@
 <template>
-  <div class="message-detail">
-  <el-row :gutter="20">
-    <el-col :span="4">
-    <el-button type="plain" @click="handleClickReturn"> 返回 </el-button> 
-    </el-col>
-		<el-col :span="4" :offset="18">
-		<el-button type="plain" @click="like" > 点赞<!-- <img src="@/assets/dis/dislike.png" height="15px" v-show="show_dislike"> --> <!-- <img src="@/assets/like/like.png" height="15px" > --></el-button>
-		</el-col>
-	</el-row>
-
-  <el-card class="box-card">
-    <div slot="header" class="clearfix">
-      <span> {{title}} </span>
-      
-    </div>
-    <div class="text item">
-      {{ content }}
-    </div>
-  </el-card>
-
+	<center>
+  <div>
+		
+		
+		<el-card class="message-detail">
+			
+			<div slot="header" class="clearfix">
+				<el-row type="flex" justify="space-between">
+					<el-col :span="4"><div class="grid-content"><el-button @click="handleClickReturn"> 返回 </el-button></div></el-col>
+					<el-col :span="16">
+						<div class="clearfix">{{title}}</div>
+					</el-col>
+					<el-col :span="4"><div class="grid-content"><el-button @click="like" > 点赞 </el-button></div></el-col>
+				</el-row>
+			</div>
+			<div class="text item">
+				{{ content }}
+			</div>
+		</el-card>
+		
   </div>
+	</center>
 </template>
 
 <style>
@@ -32,6 +33,12 @@
   .el-col {
     border-radius: 4px;
   }
+	.left-bottom{
+		margin-left: 240px;
+	}
+	.right-bottom{
+		margin-right: 240px;
+	}
   .bg-purple-dark {
     background: #99a9bf;
   }
@@ -50,16 +57,16 @@
     background-color: #f9fafc;
   }
   .message-detail {
-    margin-left: 220px;
-    margin-right: 220px
+    width: 48rem;
   }
 
   .box-card {
     margin-top: 30px;
+		width: 960px;
   }
 
   .text {
-    font-size: 18px;
+    font-size: 24px;
     text-align: left;
     line-height: 2
   }
@@ -75,6 +82,7 @@
     line-height: 50px;
     font-size: 30px
   }
+	
 </style>
 
 <script>

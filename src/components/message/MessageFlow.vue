@@ -1,30 +1,39 @@
 <template>
   <div class="message-flow">
-
-    <div class="botton-area">
-    <el-row :gutter="20"> 
-      <el-col :span="4">
-      <el-button type="plain" @click="dialogFormVisible = true"> 新建留言 </el-button>
-      </el-col>
-      <el-col :span="4" :offset="15">
-       <el-button type="plain" @click="getMessagePage"> <img src="@/assets/xin.png" height="18px"/> </el-button>
-      </el-col>
+		<div class="botton-area">
+		<el-row :gutter="20" type="flex">
+				<el-col :span="8"><div class="title">
+					留言板
+				</div></el-col>
+				
+				<el-col :span="11"><div class="grid-content"></div></el-col>
+				
+				<el-col :span="5"><div>
+					<el-row type="flex" justify="end">
+						<el-col class="refresh-bottom">
+							<el-button @click="getMessagePage" icon=el-icon-refresh round></el-button>
+						</el-col>
+						<el-col class="refresh-bottom"></el-col>
+						<el-col class="new-bottom">
+							<el-button icon="el-icon-edit" @click="dialogFormVisible = true" type="primary" round> 新建留言 </el-button>
+						</el-col>
+					</el-row>
+				</div></el-col>
+				
     </el-row>
-    </div>
-
+   </div>
+		
     <el-table
       :data="tableData"
       style="width: 100%"
       @row-click="handleRowClick">
       <el-table-column
         prop="createDate"
-        label="发布时间"
-        width="180">
+        label="发布时间">
       </el-table-column>
       <el-table-column
         prop="author"
-        label="留言者"
-        width="180">
+        label="留言者">
       </el-table-column>
       <el-table-column
         prop="title"
@@ -64,13 +73,77 @@
 
 <style>
   .message-flow {
-    margin-left: 120px;
-    margin-right: 120px
+    margin-left: 130px;
+    margin-right: 130px
   }
   .botton-area {
     margin-top: 10px;
-    margin-bottom: 20px
+    margin-bottom: 10px
   }
+	.refresh-bottom{
+		width: 64px;
+	}
+	.new-bottom{
+		width: 128px;
+	}
+	.title{
+		font: "agency fb";
+		font-size: 40px;
+		width: 140px;
+	}
+	.el-row {
+	  margin-bottom: 20px;
+	  &:last-child {
+	    margin-bottom: 0;
+	  }
+	}
+	.el-col {
+	  border-radius: 4px;
+	}
+	.el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+	.message-detail {
+	  margin-left: 240px;
+	  margin-right: 240px;
+	}
+	
+	.box-card {
+	  margin-top: 30px;
+		width: 960px;
+	}
+	
+	.text {
+	  font-size: 18px;
+	  text-align: left;
+	  line-height: 2
+	}
+	
+	.item {
+	  margin-top: 18px;
+	  margin-left: 60px;
+	  margin-right: 60px;
+	  margin-bottom: 18px;
+	}
+	
+	.clearfix {
+	  line-height: 50px;
+	  font-size: 30px
+	}
+	
 </style>
 
 
