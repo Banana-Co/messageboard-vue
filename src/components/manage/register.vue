@@ -13,7 +13,7 @@
 			<p v-show="showTishi">{{tishi}}</p>
 			<el-input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名"></el-input>
 			<el-input type="password" v-model="loginInfoVo.password" placeholder="请输入6~20位密码"></el-input>
-			<br/><el-button type="primary" v-on:click="login">注册</el-button><br/>
+			<br/><el-button type="primary" v-on:click="register">注册</el-button><br/>
 			<div >
 				<span v-on:click="ToLogin">已有账号？马上登录</span><br/>
 				<span v-on:click="ToMain">查看用户</span>
