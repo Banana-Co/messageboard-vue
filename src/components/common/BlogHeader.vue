@@ -3,7 +3,7 @@
   <el-row>
 
     <el-col :span="4">
-        <img src="@/assets/logo.png" alt="" @click="ToLogin" height="40px">
+        <button><img src="@/assets/logo.png" alt="" @click="ToLogin" height="40px"></button>
     </el-col>
 
     <el-col :span="3" :offset="17">
