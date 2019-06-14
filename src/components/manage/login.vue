@@ -4,7 +4,7 @@
 		<center><el-card class="login-card">
 			<p v-show="showTishi">{{tishi}}</p>
 			<el-input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名"></el-input>
-			<el-input type="password" v-model="loginInfoVo.password" placeholder="请输入新密码"></el-input>
+			<el-input type="password" v-model="loginInfoVo.password" placeholder="请输入密码"></el-input>
 			<br/><el-button type="primary" v-on:click="login">登录</el-button><br/>
 			<div >
 				<span v-on:click="ToRegister">没有账号？马上注册</span><br/>

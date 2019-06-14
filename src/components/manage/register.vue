@@ -16,7 +16,6 @@
 			<br/><el-button type="primary" v-on:click="register">注册</el-button><br/>
 			<div >
 				<span v-on:click="ToLogin">已有账号？马上登录</span><br/>
-				<span v-on:click="ToMain">查看用户</span>
 			</div>
 		</el-card></center>
 			
