@@ -8,7 +8,6 @@
 			<br/><el-button type="primary" v-on:click="login">登录</el-button><br/>
 			<div >
 				<span v-on:click="ToRegister">没有账号？马上注册</span><br/>
-				<span @click="$router.back(-1)">返回</span>
 			</div>
 		</el-card></center>
 	</div>
